@@ -1,2 +1,2 @@
-<h1 class="title">{{ .Title }}
+<h1 class="title"><a href="{{ .Permalink | absURL }}">{{ .Title }}</a>
   {{ partial "show-edit" . }}</h1>
