@@ -1,8 +1,5 @@
 {{ if (isset .Site.Params "git_repo") -}}
 <span class="edit" style='
-    vertical-align: middle;
-    font-size: 1rem;
-    padding: 0.5rem;
     {{ if not (isset .Site.Params "show_edit") -}}
       display: none;
     {{- end }}
@@ -14,5 +11,6 @@
     {{- else -}}
         href="{{ .Site.Params.git_repo }}/edit/{{ .Site.Params.git_branch }}/content/{{ .File.Dir }}{{ .File.LogicalName }}"
     {{- end }}
+    style="color: #485fc7;"
     target="_blank">{{ .Site.Params.show_edit }}</a></span>
 {{- end }}
