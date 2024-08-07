@@ -1,9 +1,9 @@
 <div class="suggest-edit">
   <a
     {{ if eq .Site.Params.git_host "gitea" }}
-        href="{{ .Site.Params.git_repo }}/_edit/{{ .Site.Params.git_branch }}/content/{{ .File.Dir }}{{ .File.LogicalName }}"
+        href="{{ .Site.Params.git_repo }}/_edit/{{ .Site.Params.git_branch }}/content/{{ with .File}}{{.Dir }}{{ .LogicalName }}{{ end }}"
     {{ else }}
-        href="{{ .Site.Params.git_repo }}/edit/{{ .Site.Params.git_branch }}/content/{{ .File.Dir }}{{ .File.LogicalName }}"
+        href="{{ .Site.Params.git_repo }}/edit/{{ .Site.Params.git_branch }}/content/{{ with .File}}{{.Dir }}{{ .LogicalName }}{{ end }}"
     {{ end }}
     target="_blank"
   >
